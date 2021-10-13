@@ -6,14 +6,14 @@ import { Data } from './interface/data';
   providedIn: 'root',
 })
 export class CovidService {
-  private url = `${api}${'jhu-edu'} `
+  private url = `${api}${'jhu-edu/'}`
   constructor(private http: HttpClient) {}
   /*
 Obtiene las estadisticas globales de covid
 */
   getWorldData() {
-    let path = `${this.url}${'/brief'} `
-    return this.http.get<Data[]>(path);
+    let path = `${this.url}${'brief'} `
+    return this.http.get<Data>(path);
   }
   /*
 Obtiene las estadisticas de covid segun el pais seleccionado

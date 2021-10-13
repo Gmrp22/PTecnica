@@ -1,0 +1,86 @@
+$fuente: 'Exo', sans-serif
+$recuperados: #FF833E
+$fallecidos: #F16051
+$casos: #FFC47C
+
+.covid-data-dash
+    margin-left: 8rem
+    margin-right: 8rem
+    background-color: #FFFFFF
+
+
+@mixin labels($color)
+    font-weight: bold
+    font-size: calc(1em + 1vw)
+    font-family: $fuente
+    color: $color
+    width: auto
+
+.confirmados
+    label
+        @include labels($casos)
+.recuperados
+    label
+        @include labels($recuperados)
+.fallecidos
+    label
+        @include labels($fallecidos)
+
+    // Responsive
+
+
+@mixin header($size)
+    font-weight: bold
+    font-size: 1em + $size
+    font-family: $fuente
+    width: auto
+    text-align: center
+h3
+    font-family: $fuente
+    font-style: normal
+    font-weight: bold
+    margin: 2%
+    color: #2E3045
+
+.header
+    // font-size: calc(2rem + 1vw)
+    @include header(2em)
+    
+    
+@media only screen and (max-width:768px)
+
+    .header
+        font-size: 1.5rem
+        padding-left: 5%
+        padding-right: 5%
+        width: auto
+        text-align: center
+@media only screen and (min-width:769px) and (max-width:1023px)
+
+    .header
+        font-size: 2rem
+        padding-left: 5%
+        padding-right: 5%
+        width: auto
+        text-align: center
+@media only screen and (min-width:1024px) and (max-width:1215px)
+    .header
+        font-size: 3rem
+        padding-left: 10%
+        padding-right: 10%
+        width: auto
+        text-align: center
+@media only screen and (min-width:1216px) and (max-width:1407px)
+    .header
+        font-size: 4rem
+        padding-left: 20%
+        padding-right: 20%
+        width: auto
+        text-align: center
+@media only screen and (min-width:1408px)
+    .header
+        font-size: 5rem
+        padding-left: 20%
+        padding-right: 20%
+        width: auto
+        text-align: center
