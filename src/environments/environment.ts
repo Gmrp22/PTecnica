@@ -5,7 +5,7 @@
 export const environment = {
   production: false
 };
-export const api= "https://ainize.ai/laeyoung/covid-19-api"
+export const api= "https://master-covid-19-api-laeyoung.endpoint.ainize.ai/"
 
 
 /*
