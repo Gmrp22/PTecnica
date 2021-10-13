@@ -5,6 +5,8 @@
 export const environment = {
   production: false
 };
+export const api= "https://ainize.ai/laeyoung/covid-19-api"
+
 
 /*
  * For easier debugging in development mode, you can import the following file
