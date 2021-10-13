@@ -1,4 +1,25 @@
 <div class="main">
-<h1 class="has-text-centered-widescreen header">Estadisticas COVID</h1>
-<app-dashboard></app-dashboard>
+  <h1 class="has-text-centered-widescreen header">Estadisticas COVID</h1>
+  <app-dashboard></app-dashboard>
+  <div class="buttons">
+    <div class="pais">
+      <button
+        class="button-dash button is-fullwidth"
+        (click)="showTable()"
+        *ngIf="!tableShow; else notShow"
+      >
+        Normal
+      </button>
+      <ng-template #notShow>
+        <button class="button-dash button is-fullwidth" (click)="hideTable()">
+          Esconder tabla
+        </button>
+      </ng-template>
+    </div>
+    <div class="suscripcion">
+      <button class="button-dash button is-fullwidth">Normal</button>
+    </div>
+  </div>
+
+  <app-table *ngIf="tableShow"> </app-table>
 </div>
