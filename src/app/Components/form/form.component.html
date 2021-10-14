@@ -1,0 +1,78 @@
+<form [formGroup]="Form">
+  <div class="form-group">
+    <label>Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="nombre"
+      placeholder="Ingrese nombre"
+      minlength="3"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        (registerFormControl.nombre.touched || submitted) &&
+        registerFormControl.nombre.errors?.required
+      "
+    >
+      El nombre es requerido
+    </span>
+    <span
+      class="text-danger"
+      *ngIf="
+        (registerFormControl.nombre.touched || submitted) &&
+        registerFormControl.nombre.errors?.minlength
+      "
+    >
+      El nombre debe tener mas de tres caracteres
+    </span>
+  </div>
+  <div class="form-group">
+    <label>Fecha de nacimiento</label>
+    <input
+      type="date"
+      class="form-control"
+      formControlName="fecha"
+      placeholder="Ingrese la fecha de nacimiento"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        (registerFormControl.fecha.touched || submitted) &&
+        registerFormControl.fecha.errors?.required
+      "
+    >
+      La fecha es requerida
+    </span>
+  </div>
+  <div class="form-group">
+    <label>Correo</label>
+    <input
+      type="email"
+      class="form-control"
+      formControlName="correo"
+      placeholder="Ingrese el correo"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        (registerFormControl.correo.touched || submitted) &&
+        registerFormControl.correo.errors?.required
+      "
+    >
+      El correo es requerido
+    </span>
+    <span
+      class="text-danger"
+      *ngIf="
+        (registerFormControl.correo.touched || submitted) &&
+        registerFormControl.correo.errors?.email
+      "
+    >
+      Ingrese una direccion de correo valida
+    </span>
+  </div>
+  <button type="submit" class="btn btn-primary boton" (click)="submit()">
+    Suscribirse
+  </button>
+</form>

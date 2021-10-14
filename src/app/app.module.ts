@@ -5,15 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 // Components
 import { AppComponent } from './Components/app/app.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { TableComponent } from './Components/table/table.component';
 import { PaginacionComponent } from './Components/paginacion/paginacion.component';
+import { FormComponent } from './Components/form/form.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, TableComponent, PaginacionComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  declarations: [AppComponent, DashboardComponent, TableComponent, PaginacionComponent, FormComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

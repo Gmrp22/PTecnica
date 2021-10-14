@@ -22,9 +22,10 @@
       </ng-template>
     </div>
     <div class="suscripcion">
-      <button class="button-dash button is-fullwidth">Suscripción</button>
+      <button class="button-dash button is-fullwidth" (click)="showForm()">Suscripción</button>
     </div>
   </div>
   <!-- Muestra la tabla y pasa la variable iso -->
   <app-table *ngIf="tableShow" [iso]="iso"> </app-table>
+  <app-form *ngIf="formShow" ></app-form>
 </div>

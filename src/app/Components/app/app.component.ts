@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'PTecnica';
   tableShow = false;
+  formShow=false
   iso = '';
   paises = [
     { nombre: 'Guatemala', value: 'GT' },
@@ -23,6 +24,7 @@ export class AppComponent {
  */
   showTable() {
     this.tableShow = true;
+    this.formShow = false;
     if (this.iso == 'N/A') {
       this.hideTable();
     }
@@ -31,6 +33,19 @@ export class AppComponent {
  Esconde tabla
  */
   hideTable() {
+    this.tableShow = false;
+  }
+  /*
+  Esconde el form
+  */
+  hideForm() {
+    this.formShow = false;
+  }
+  /*
+ Muestra el form
+ */
+  showForm() {
+    this.formShow = true;
     this.tableShow = false;
   }
 }
