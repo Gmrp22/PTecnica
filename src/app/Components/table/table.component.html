@@ -1,1 +1,19 @@
-<p>table works!</p>
+<div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Pais</th>
+        <th>Confirmados</th>
+        <th scope="col">Recuperados</th>
+        <th scope="col">Fallecidos</th>
+        <th scope="col">Fecha</th>
+      </tr>
+    </thead>
+
+    <tbody></tbody>
+  </table>
+  <app-paginacion
+    (newPageEvent)="tableData($event)"
+    [iso]="iso"
+  ></app-paginacion>
+</div>

@@ -1,15 +1,20 @@
 <div class="main">
-  <h1 class="has-text-centered-widescreen header">Estadisticas COVID</h1>
+  <div><h1 class="header">Estadisticas COVID</h1></div>
   <app-dashboard></app-dashboard>
   <div class="buttons">
     <div class="pais">
-      <button
+      <select
         class="button-dash button is-fullwidth"
-        (click)="showTable()"
-        *ngIf="!tableShow; else notShow"
+        [(ngModel)]="iso"
+        (change)="showTable()"
       >
-        Normal
-      </button>
+        <option disabled selected hidden value="">Paises</option>
+        <option *ngFor="let p of paises" value="{{ p.value }}">
+          {{ p.nombre }}
+        </option>
+        <option value="N/A">Esconder</option>
+      </select>
+
       <ng-template #notShow>
         <button class="button-dash button is-fullwidth" (click)="hideTable()">
           Esconder tabla
@@ -17,9 +22,9 @@
       </ng-template>
     </div>
     <div class="suscripcion">
-      <button class="button-dash button is-fullwidth">Normal</button>
+      <button class="button-dash button is-fullwidth">Suscripción</button>
     </div>
   </div>
-
-  <app-table *ngIf="tableShow"> </app-table>
+  <!-- Muestra la tabla y pasa la variable iso -->
+  <app-table *ngIf="tableShow" [iso]="iso"> </app-table>
 </div>
