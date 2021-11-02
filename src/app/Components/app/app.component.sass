@@ -15,7 +15,7 @@ h1
     width: auto
 .main
     background-color: $gray
-    min-height: 100rem
+    min-height: 200rem
 
 @mixin buttons-fix($padding)
     padding-left: $padding
@@ -127,17 +127,27 @@ $list: blue, red, green
 @for $var from 1 through 4
     .s-#{$var}
         font-size: $var *1em
-     
+
 //while
 $x: 1
-@while $x < 4   
-    .p-#{$x} 
+@while $x < 4
+    .p-#{$x}
         font-size: 10px*$x
     $x: $x + 1
-    
 
 //alertas
 
 //Modulos en sass
 
+
 //funcion sass ems basado en px
+@function emTopx($npx)
+    $em: ($npx/16)*1em
+    @return $em
+.ems
+    font-size: emTopx(32)
+    display: block
+
+.topx
+    font-size: 32px
+
