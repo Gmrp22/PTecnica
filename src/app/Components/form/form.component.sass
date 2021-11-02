@@ -1,3 +1,4 @@
+@import "../main"
 $fuente: 'Exo', sans-serif
 
 .boton
@@ -9,9 +10,16 @@ form
 
 
 button
-    background-color: #595594
+    background-color: $purple-color
     border-radius: 15px
     font-family: $fuente
     font-style: normal
     font-weight: bold
-    color: #FFFFFF
+    color: $white
+ 
+/* Modo landscape */
+
+@media (orientation: landscape) 
+    form
+        width: 100%
+        margin:0px
