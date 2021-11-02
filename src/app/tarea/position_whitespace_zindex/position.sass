@@ -1,0 +1,76 @@
+
+@import "../sass.sass";
+    /* Generales */
+.container
+    height: 200vh
+
+.container > div
+    border: 3px solid $border-main-color
+    height: 10vh
+    width: 100%
+
+/* Fijo */
+#fixed
+    position: fixed
+    top: 550px
+    border-color: $border-secundary-color
+
+/* Relativo */
+#relative
+    position: relative
+    left: 20%
+    top: 5px
+    border-color: $border-main-color
+
+/* Absolute */
+#absolute
+    position: absolute
+    top: 2000px
+    border-color: $border-main-color
+
+/* Z-INDEX  elementos que se superponen*/
+#zIndex
+    margin: 2% 0
+    border-color: #b43deb
+
+#zIndex > div
+    position: absolute
+    width: 100%
+
+#maZindex
+    border-color: yellowgreen
+    color: greenyellow
+    z-index: 1
+
+#mZindex
+    border-color: yellowgreen
+    z-index: -1
+    background-color: rgba(48, 29, 29, 0.2)
+    text-align: right
+
+/* White-space, manejo de espacios dentro de un contenedor */
+
+#whiteSpace
+    height: auto
+
+#whiteSpace p
+    width: 10%
+    background-color: rgba(11, 96, 176, 0.4)
+
+#normal
+    white-space: normal
+
+#pre
+    white-space: pre
+
+#nowrap
+    white-space: nowrap
+
+#pre-wrap
+    white-space: pre-wrap
+
+#pre-line
+    white-space: pre-line
+
+#inherti
+    white-space: inherit

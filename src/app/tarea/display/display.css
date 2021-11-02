@@ -1,0 +1,110 @@
+/* Generales */
+.container {
+  height: 200vh;
+}
+.container > div {
+  border: 3px solid #0b60b0;
+  height: 10vh;
+  width: 100%;
+  margin: 1% 0;
+}
+
+/* Inline */
+#inline p:first-child {
+  display: inline;
+}
+
+/* Block */
+#block label:first-child {
+  display: block;
+}
+
+/* ListItem */
+#listItem div > p {
+  display: list-item;
+  list-style: disc;
+  list-style-position: inside;
+}
+#listItem {
+  height: auto;
+}
+
+/* Run-In */
+#runIn {
+  display: run-in;
+}
+
+/* Inline Block */
+#inlineBlock label:first-child {
+  display: inline-block;
+}
+
+#inlineBlock label {
+  margin: 20px 40px;
+  background-color: red;
+  height: 40px;
+}
+
+/* Table */
+#table {
+  height: 300px;
+  display: table;
+  width: 50%;
+}
+/* Table row */
+.tableRow {
+  display: table-row;
+}
+/* Table column  */
+.tableColumn {
+  display: table-column;
+}
+/* Table cell */
+.tableCell {
+  display: table-cell;
+  border: 3px solid #0b60b0;
+  height: 20%;
+}
+
+/* inline Table */
+#inlineTable {
+  display: inline-table;
+  width: 50%;
+}
+/* Table rowG tbody */
+.tableRowG {
+  display: table-row-group;
+  background-color: aliceblue;
+}
+/* Table columnG, colgroup */
+.tableColumnG {
+  display: table-column-group;
+  background-color: #0b60b0;
+}
+/* Theader */
+.tableHeaderG {
+  display: table-header-group;
+  font-weight: bold;
+  color: white;
+}
+/* t footer */
+.tableFooterG {
+  display: table-footer-group;
+}
+/* t caption */
+.tableCaption {
+  display: table-caption;
+}
+
+/* None */
+#none {
+  display: none;
+}
+/* Inherit */
+
+#inherit label:first-child {
+  display: block;
+}
+#inherit label > kbd:first-child {
+  display: inherit;
+}
