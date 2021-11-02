@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Position</title>
+    <link rel="stylesheet" type="text/css" href="./positions.css" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1"
+    />
+  </head>
+
+  <body>
+    <header id="masthead"></header>
+    <!-- Usare varios divs para manejar los ejemplos de pos -->
+    <div id="main-container" class="container">
+      <div id="fixed">
+        Fixed: Es relativo al viewport, es decir que siempre se queda en el
+        mismo lugar, no deja espacio y sale del flujo normal
+      </div>
+      <div id="static">
+        Static: Es el default, se posiciona segun el flow normal de la pagina
+      </div>
+      <div id="relative">
+        Relative: Se posiciona relativo a su posicion normal, el contenido de
+        alrededor no se ajusta para llenar espacios
+      </div>
+      <div id="absolute">
+        Absolute: Se remueve del flujo de la pagina y no se le crea un espacio.
+        Es en base a su ancestro posicionado, si no hay es al body
+      </div>
+      <div id="zIndex">
+        Z-index: Indica un orden, cuando varios se superponen los que tienen
+        mayor z-index cubren a los de menor
+        <div id="mZindex">DIV CON MENOR Z-INDEX</div>
+        <div id="maZindex">DIV CON MAYOR Z-INDEX</div>
+      </div>
+      <div id="whiteSpace">
+        White-spaces: Determina como se divide el espacio en blanco dentro de un
+        elemento
+        <p id="normal">
+          normal: Los espacios en blanco sobrantes y saltos de linea se
+          eliminan, el texto se muesta en tantas lineas sea necesarios para no
+          salirse del contenedor
+        </p>
+        <p id="pre">
+          pre: Las lineas solo se ropen si se tiene caracteres de salto de linea
+          en el origen o <br />
+          elementos html y se mantienen los espacios en blanco sobrantes
+        </p>
+        <p id="nowrap">
+          nowrap: Ignora los salto de linea y no mantiene espacios
+        </p>
+        <p id="pre-wrap">
+          pre-wrap: se comporta igual que pre, pero se introducen los saltos de
+          línea que sean necesarios para que los contenidos de texto nunca se
+          salgan de su elemento contenedor.
+        </p>
+        <p id="pre-line">
+          Pre line: se eliminan los espacios en blanco sobrantes, pero se
+          respetan los saltos de línea originales y se crean tantos saltos de
+          línea como sean necesarios para que el contenido de texto no se salga
+          de su elemento contenedor.
+        </p>
+
+        <p id="inherit">Inherit: Hereda la propiedad de su padre</p> //TODO inherit
+      </div>
+    </div>
+
+    <footer></footer>
+  </body>
+</html>
