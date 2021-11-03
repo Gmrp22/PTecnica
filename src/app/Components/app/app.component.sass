@@ -1,3 +1,11 @@
+//Indicar modulos a utilizar
+@use "sass:string"
+@use "sass:color"
+@use "sass:list"
+@use "sass:math"
+@use "sass:map"
+@use "sass:selector"
+@use "sass:meta"
 // Importo el main para poder acceder a tres colores primarios
 @import "../main"
 $fuente: 'Exo', sans-serif
@@ -150,3 +158,95 @@ $x: 1
 
 .topx
     font-size: 32px
+
+//Modulos de sass
+.module-sass > div
+    border: 2px solid $purple-color
+    margin: 5% 0
+    height: 10vh
+
+//math, altura random de div
+#math
+    height: math.random($limit:100)*1vh
+//String se unen dos strings y se les quita las "" para que se reconozca el estilo
+@mixin fontString($style)
+    $font: "Exo ,"
+    $f: string.insert($font, $style, 100)
+    $font-family: string.unquote($f)
+    font-family: $font-family
+
+#string 
+    .label1
+        @include fontString($style: Fantasy)
+    .label2
+        @include fontString($style: san-serif)
+// Color
+#color
+    $color: yellowgreen
+    #p1
+        background-color: $color
+    #p2
+        background-color: color.adjust($color, $hue:15)
+// List, se indica el estilo de la letra al unir en una lista
+@mixin font($style)
+    $font: "Exo"
+    $font-family: list.append($font, $style, $separator:comma)
+    font-family: $font-family
+
+#list 
+    .label1
+        @include font($style: Fantasy)
+    .label2
+        @include font($style: san-serif)
+
+// Map, obtiene el valor especifico para cada llave
+$color: ("red": red, "green": green, "blue": blue)
+#map
+    #red
+        background-color: map.get($color, "red")  
+    #blue
+        background-color: map.get($color, "blue")  
+    #green
+        background-color: map.get($color, "green")  
+
+// Selector, se crea un nuevo selector
+$new_selector: selector.nest("#selector", "p") 
+
+#{$new_selector}
+    background-color: pink
+
+// Meta, cargar archivo main.sass y utilizar el mixin fuente
+
+// #meta > p
+//     meta.load-css("../main.sass") 
+
+
+//Estilos para alerta
+.alerta
+    font-family: $fuente
+    font-style: normal
+    font-weight: bold    
+    height: auto
+    width: 20%
+    position: fixed 
+    top:10vh
+    transition: width 2s
+.alert:hover
+    width: 25%
+
+.showAlerta
+    visibility: visible
+.nshowAlerta
+    visibility: hidden
+    display: none
+
+//Cambio de borde
+.success
+    border:5px solid blue
+    @extend .alerta
+.warning
+    @extend .alerta
+    border:5px solid orange
+.danger
+    @extend .alerta
+    border:5px solid red

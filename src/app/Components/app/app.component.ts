@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'PTecnica';
   tableShow = false;
-  formShow=false
+  formShow = false;
   iso = '';
   paises = [
     { nombre: 'Guatemala', value: 'GT' },
@@ -19,6 +19,11 @@ export class AppComponent {
     { nombre: 'Panama', value: 'PA' },
     { nombre: 'Belice', value: 'BZ' },
   ];
+  alerta = '';
+  visible = false;
+  success = false;
+  warning = false;
+  danger = false;
   /*
  Muestra tabla si se selecciona un pais
  */
@@ -47,5 +52,29 @@ export class AppComponent {
   showForm() {
     this.formShow = true;
     this.tableShow = false;
+  }
+  /*
+    Lee la respuesta gracias al output del form,
+   el codigo de status puede variar y dependiendo de este se aplica una clase a la alerta
+   */
+  alertas(response: any) {
+    this.alerta = response.msg;
+    this.visible = true;
+    if (response.status == 1) {
+      this.success = true;
+    } else if (response.status == 2) {
+      this.danger = true;
+    } else {
+      this.warning = true;
+    }
+    setTimeout(() => {
+      this.visible = false;
+      this.alerta = '';
+      this.success = false;
+      this.warning = false;
+      this.danger = false;
+    }, 3000);
+
+    console.log(this.alerta);
   }
 }

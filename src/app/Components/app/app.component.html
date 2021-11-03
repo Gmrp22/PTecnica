@@ -22,22 +22,35 @@
       </ng-template>
     </div>
     <div class="suscripcion">
-      <button class="button-dash button is-fullwidth" (click)="showForm()">Suscripción</button>
+      <button class="button-dash button is-fullwidth" (click)="showForm()">
+        Suscripción
+      </button>
     </div>
   </div>
   <!-- Muestra la tabla y pasa la variable iso -->
   <app-table *ngIf="tableShow" [iso]="iso"> </app-table>
-  <app-form *ngIf="formShow" ></app-form>
-<hr>
-<h1>Ejercico de tarea</h1>
+  <!-- Hice el binfing para poder recibir el output del form -->
+  <app-form *ngIf="formShow" (alert)="alertas($event)"></app-form>
+
+  <!-- Div para alertas, dependiendo de las variables del componente se decide si se muestra y que tipo de alerta es -->
+  <div
+    [class.alerta]="visible"
+    [ngClass]="{ success: success, warning: warning, danger: danger }"
+  >
+    {{ this.alerta }}
+  </div>
+
+  <hr />
+  <h1>Ejercico de hover y bordes</h1>
   <!--Elementp para ejercicio de borders  -->
-<div class="tarea">
+  <div class="tarea">
     <p>Este parrafo es 1</p>
     <p>Este parrafo es 2</p>
   </div>
 
-<hr>
+  <hr />
   <!-- Elementos para condiciones -->
+  <h1>Condiciones</h1>
   <h3>If</h3>
   <div class="if">
     <p>Este parrafo es 1</p>
@@ -56,7 +69,7 @@
     <p class="s-3">Este parrafo es 3</p>
     <p class="s-4">Este parrafo es 4</p>
   </div>
-  <hr>
+  <hr />
   <div class="while">
     <h3>While</h3>
     <p class="p-1">Este parrafo es 1</p>
@@ -64,8 +77,50 @@
     <p class="p-3">Este parrafo es 3</p>
   </div>
 
-  <hr>
-<h1>Funcion de ems a px</h1>
-<label class="ems">Label de fuente 2em</label>
-<label class="topx">Label de fuente 32px</label>
+  <hr />
+  <!-- Elementos para demostrar funcion que convierte -->
+  <h1>Funcion de ems a px</h1>
+  <label class="ems">Label de fuente 2em</label>
+  <label class="topx">Label de fuente 32px</label>
+
+  <hr />
+  <!-- Elementos para demostrar modulos de sass -->
+  <h1>Modules de sass</h1>
+  <div class="module-sass">
+    <div id="math">Math: random de altura del div</div>
+    <div id="string">
+      String: Se utiliza insert para indicar la familia de font para un label
+      especifico
+      <label class="label1">fantasy</label
+      ><label class="label2">sans-serif</label>
+    </div>
+    <div id="color">
+      Color: se ajusta el color para el parrafo 2
+      <p id="p1">Parrafo1</p>
+      <p id="p2">Parrafo2</p>
+    </div>
+
+    <div id="list">
+      List: Se utiliza append para indicar la familia de font para un label
+      especifico: <label class="label1">fantasy</label
+      ><label class="label2">sans-serif</label>
+    </div>
+
+    <div id="map">
+      Map: se tiene una lista key:value de colores, se obtienen estos valores
+      para cada parrafo
+
+      <p id="red">Rojo</p>
+      <p id="blue">Azul</p>
+      <p id="green">Verde</p>
+    </div>
+    <div id="selector">
+      Selector: Se creara un nuevo selector
+      <p id="p-noo">Parrafo</p>
+    </div>
+    <div id="meta">
+      Meta: Cargara estilos de otro archivo y lo aplicara
+      <p>Parrafo para ejemplo</p>
+    </div>
+  </div>
 </div>
