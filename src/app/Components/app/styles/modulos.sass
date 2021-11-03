@@ -70,8 +70,13 @@ $new_selector: selector.nest("#selector", "p")
 #{$new_selector}
     background-color: pink
 
-// Meta, cargar archivo main.sass y utilizar el mixin fuente
+// Meta, ver si una variable existe, si existe aplicar efecto
 
-// #meta > p
-//     meta.load-css("../main.sass") 
+#meta > p
+    $rr : meta.variable-exists("test")
+    @if $rr
+        background-color: $ygreen
+    @else 
+        background-color: $purple-color
+
 
