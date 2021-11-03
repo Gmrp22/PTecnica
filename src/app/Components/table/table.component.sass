@@ -1,21 +1,22 @@
 @import "../main"
 $fuente: 'Exo', sans-serif
 $fuente-size: 3
-$tbody-fuente: #FF833E
+$tbody-fuente: $recuperados
 
+//Mixin para layout de tabla
 @mixin Table($size, $w)
     width: 100% - 2* $w
     margin-left: $size
     margin-right: $size
     font-family: $fuente
-
+//Mixin para fuentes 
 @mixin Fuentes($color, $sizef)
     font-weight: bold
     font-size: $sizef
     font-family: $fuente
     color: $color
     width: auto
-
+//Estilos de tabla
 table
     @include Table($size: 10%, $w:10% )
 
@@ -27,18 +28,21 @@ table
     tbody
         @include Fuentes($tbody-fuente,$sizef: 1.8em)
 
-@media only screen and (max-width:767px)
 
+
+
+
+//Responsive
+@media only screen and (max-width:767px)
     table
         @include Table($size: 4%, $w:94% )
         thead
-            background-color: #595594
+            background-color: $purple-color
             th
                 @include Fuentes($white, $sizef: 3vw)
 
         tbody
             @include Fuentes($tbody-fuente,$sizef: 3vw)
-
 @media only screen and (min-width:768px) and (max-width:1023px)
     table
         @include Table($size: 5%, $w:5% )

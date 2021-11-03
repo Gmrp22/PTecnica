@@ -1,0 +1,63 @@
+//Separar en archivos los estilos
+
+// Importo el main para poder acceder a tres colores primarios
+@import "../../main"
+
+// Mixin para bordes, aplica borders a cuaquier elemento que llame al mixin y si es
+// el primer hijo aplica ese cambio en hover
+@mixin roundedBorder()
+    border-radius: 20px
+    &:hover:first-child
+        border-color: $white
+
+.tarea
+    margin: 2% 0
+    > p //segun guia, nested
+        @include roundedBorder() //Include tiene que ir arriba
+        display: inline-block
+        margin: 0 10%
+        border: 20px solid $purple-color
+
+// Condicones, si se tiene un true, se cambia el color de fondo
+@mixin condicion($orden)
+    @if $orden
+        background-color: $purple-color
+
+//List, solo se le cambiara el fondo al primer hijo
+.if 
+    //primero pseudoclases y pseudoelemnto  y luego selectores nested
+    p:first-child
+        @include condicion($orden: true)
+    > p
+        border: $border $purple-color
+        width: 50%
+
+//EACH, se itera una lista y se generan clases de color para cada elemento en esta
+$list: $blue, $red, $green
+@each $color in $list
+    .p-#{$color}
+        background-color: $color
+        width: 50%
+
+//for, se itera para generar clases con distintos tamaños
+@for $var from 1 through 4
+    .s-#{$var}
+        font-size: $var *1em
+
+//while, se itera hasta que x=4, para generar clases de tamaño
+$x: 1
+@while $x < 4
+    .p-#{$x}
+        font-size: 10px*$x
+    $x: $x + 1
+
+//funcion sass ems basado en px, se reciben los px y se calculan los ems
+@function emTopx($npx)
+    $em: ($npx/16)*1em
+    @return $em
+.ems
+    font-size: emTopx(32)
+    display: block
+
+.topx
+    font-size: 32px

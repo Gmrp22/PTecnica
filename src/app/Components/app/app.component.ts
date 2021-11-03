@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
+  styleUrls: ['./styles/app.component.sass', './styles/tarea.sass', './styles/alertas.sass', './styles/modulos.sass'],
 })
 export class AppComponent {
   title = 'PTecnica';

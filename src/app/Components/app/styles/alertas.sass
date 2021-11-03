@@ -1,0 +1,28 @@
+// Importo el main para poder acceder a tres colores primarios
+@import "../../main"
+//Estilos para alerta, separados por  conceptos de guia
+.alerta
+    font-family: 'Exo'
+    font-style: normal
+    font-weight: bold    
+    height: auto
+    width: 20%
+    position: fixed 
+    top:10vh
+
+.showAlerta
+    visibility: visible
+.nshowAlerta
+    visibility: hidden
+    display: none
+
+//Cambio de borde para alertas
+.success
+    @extend .alerta  //Segun guia, se pone primero el extend para saber que la clase tiene otras reglas
+    border:5px solid $blue
+.warning
+    @extend .alerta  //Segun guia, se pone primero el extend para saber que la clase tiene otras reglas
+    border:5px solid $recuperados
+.danger
+    @extend .alerta  //Segun guia, se pone primero el extend para saber que la clase tiene otras reglas
+    border:5px solid $red

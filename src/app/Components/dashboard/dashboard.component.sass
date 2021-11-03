@@ -1,16 +1,15 @@
 @import "../main"
 $fuente: 'Exo', sans-serif
-$recuperados: #FF833E
-$fallecidos: #F16051
-$casos: #FFC47C
 
+
+//Estilo general del dash
 .main-dash
     margin-top: 5%
 @mixin DashMargin($size)
     margin-left: $size
     margin-right: $size
     background-color: $white
-    border: 2px solid red
+    border: $border $red
 
 .covid-data-dash
     @include DashMargin($size: 8rem)
@@ -23,6 +22,7 @@ $casos: #FFC47C
     width: auto
     margin-bottom: 2%
 
+//Estilo de labes 
 .confirmados
     label
         @include labels($casos)
@@ -33,7 +33,7 @@ $casos: #FFC47C
     label
         @include labels($fallecidos)
 
-    // Responsive
+//Mixin para header
 
 @mixin header($size)
     font-weight: bold
@@ -50,9 +50,9 @@ h3
     color: #2E3045
 
 .header
-    // font-size: calc(2rem + 1vw)
     @include header(2em)
 
+//Responsive
 @media only screen and (max-width:768px)
 
     .header

@@ -1,0 +1,94 @@
+// Importo el main para poder acceder a tres colores primarios
+@import "../../main"
+$fuente: 'Exo', sans-serif
+$fuente-size: 3
+h1
+    font-family: $fuente
+    font-style: normal
+    font-weight: bold
+    color: $purple-color
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    padding-top: 3%
+.header
+    font-size: 2rem
+    padding-left: 2%
+    padding-right: 2%
+    width: auto
+
+.main
+    background-color: $gray
+    min-height: 200rem
+
+@mixin buttons-fix($padding)
+    padding-left: $padding
+@mixin button($size)
+    background-color: $purple-color
+    border-radius: 15px
+    font-family: $fuente
+    font-style: normal
+    font-weight: bold
+    width: $size
+    color: $white
+
+.buttons
+    margin-top: 10%
+    .suscripcion
+        @include buttons-fix($padding:15% )//include tiene que ir arriba
+        width: 50%
+
+    .pais
+        @include buttons-fix($padding:25% )//include tiene que ir arriba
+        width: 50%
+
+.button-dash
+    @include button($size:10rem )
+
+    // Responsive
+        
+@media only screen and (max-width:767px)
+    .header
+        font-size: 2rem
+        padding-left: 10%
+        padding-right: 10%
+        width: auto
+        text-align: center
+    .buttons
+        margin-top: 10%
+        .suscripcion
+            width: 50%
+            @include buttons-fix($padding:5% ) //include tiene que ir arriba
+        .pais
+            @include buttons-fix($padding:10% ) //include tiene que ir arriba
+            width: 50%
+    .button-dash
+        @include button($size:6rem )
+@media only screen and (min-width:768px) and (max-width:1023px)
+    .header
+        font-size: 3rem
+        padding-left: 10%
+        padding-right: 10%
+        width: auto
+        text-align: center
+    .buttons
+        margin-top: 10%
+        .suscripcion
+            width: 50%
+            display: block
+        .pais
+            width: 50%
+            display: block
+@media only screen and (min-width:1024px) and (max-width:1407px)
+    .header
+        font-size: 4rem
+        padding-left: 10%
+        padding-right: 10%
+        width: auto
+        text-align: center
+@media only screen and (min-width:1408px)
+    .header
+        font-size: 6rem
+        padding-left: 20%
+        padding-right: 20%
+        width: auto
+        text-align: center
+
