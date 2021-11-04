@@ -1,4 +1,14 @@
-<!-- <div>
-  <button (click)="newPage(1)"></button>
+<div
+  class="life-hook"
+  [ngClass]="{
+    'lifehook--yellow': yellowcolor,
+    'lifehook--purple': purplecolor
+  }"
+  (click)="clickChange()"
+>
+  Click me!
+</div>
 
-</div> -->
+<div class="dash-projection">
+<ng-content></ng-content>
+</div>

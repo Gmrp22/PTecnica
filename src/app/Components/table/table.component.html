@@ -12,8 +12,14 @@
 
     <tbody class="table-component__tbody"></tbody>
   </table>
-  <app-paginacion
-    (newPageEvent)="tableData($event)"
-    [iso]="iso"
-  ></app-paginacion>
+  <!-- Boton que muestra un componente hijo -->
+  <button (click)="showHijo()">Nuevo componente</button>
+
+  <div [class.msg]="change">
+    {{ msg }}
+  </div>
 </div>
+
+<app-paginacion *ngIf="showhijo">
+  <app-dashboard></app-dashboard>
+</app-paginacion>

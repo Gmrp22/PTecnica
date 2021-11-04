@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ContentChild, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CovidService } from 'src/app/services/covid/covid.service';
+import { NotificationService } from 'src/app/services/notification/notification.service';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-paginacion',
@@ -7,16 +9,58 @@ import { CovidService } from 'src/app/services/covid/covid.service';
   styleUrls: ['./paginacion.component.sass'],
 })
 export class PaginacionComponent implements OnInit {
-  data: any;
-  @Input() iso = '';
-  @Output() newPageEvent = new EventEmitter<string>();
+  yellowcolor = false;
+  purplecolor = true;
+  state = false;
+  @ContentChild(DashboardComponent) contentChild!: DashboardComponent;
+  //lifecycle hooks
+  constructor(private notifix: NotificationService) {}
 
-  constructor(private covid: CovidService) {}
-  ngOnInit(): void {}
-  newPage(number: number) {
-    this.covid.getCountryData(this.iso).subscribe((val) => {
-      console.log(val);
-      this.newPageEvent.emit(this.data);
-    });
+  //Se ejecuta despues de que se renderizo los datos input. Va despues de onChanges y solo una vez
+  ngOnInit(): void {
+    //Inicializa el fondo a color amarillo y borde morado
+    alert("CLICK")
+    this.yellowcolor = true;
+    this.purplecolor = false;
+    this.state = false;
   }
+
+  //Detecta cambios que angular no, va despues de onchanges y oninit
+  ngDoCheck(): void {
+    //Dependiendo del estado cambiara los colores del boton
+    if (this.state) {
+      this.yellowcolor = false;
+      this.purplecolor = true;
+    } else {
+      this.yellowcolor = true;
+      this.purplecolor = false;
+    }
+  }
+
+  clickChange() {
+    //Cambiara el estado, que sera evaluado por ngdocheck
+    if (this.state) {
+      this.state = false;
+    } else {
+      this.state = true;
+    }
+  }
+
+
+
+
+//aftercontent init, despues de que se ha proyectado contenido de otro html a el componente. Se llama despues de ngdocheck
+ngAfterContentInit(): void {
+  alert("Dash proyectado inicializado")
+  
+}
+//aftercontentchecked init, despues de que se hay cambios. Se llama despues de ngdocheck
+ngAfterContentChecked(): void {
+  console.log("after_content_checked")
+  
+}
+
+
+
+
 }

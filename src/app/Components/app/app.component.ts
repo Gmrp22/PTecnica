@@ -75,6 +75,7 @@ export class AppComponent {
       this.danger = false;
     }, 3000);
 
-    console.log(this.alerta);
   }
+
+  
 }
