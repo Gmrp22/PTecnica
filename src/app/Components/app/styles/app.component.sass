@@ -2,7 +2,8 @@
 @import "../../main"
 $fuente: 'Exo', sans-serif
 $fuente-size: 3
-h1
+//Cambios por BEM
+@mixin header()
     font-family: $fuente
     font-style: normal
     font-weight: bold
@@ -10,11 +11,15 @@ h1
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
     padding-top: 3%
 .header
+    @include header()
     font-size: 2rem
     padding-left: 2%
     padding-right: 2%
     width: auto
+.header--small
+    @include header()
 
+    
 .main
     background-color: $gray
     min-height: 200rem
@@ -29,21 +34,21 @@ h1
     font-weight: bold
     width: $size
     color: $white
-
-.buttons
-    margin-top: 10%
-    .suscripcion
-        @include buttons-fix($padding:15% )//include tiene que ir arriba
-        width: 50%
-
-    .pais
-        @include buttons-fix($padding:25% )//include tiene que ir arriba
-        width: 50%
-
+//botones de dashboard
 .button-dash
     @include button($size:10rem )
 
-    // Responsive
+//Cambio segun bem
+//Divs
+.buttons
+    margin-top: 10%
+.buttons__containersuscripcion
+    @include buttons-fix($padding:15% )//include tiene que ir arriba
+    width: 50%
+.buttons__containerpais
+    @include buttons-fix($padding:25% )//include tiene que ir arriba
+    width: 50%
+// Responsive
         
 @media only screen and (max-width:767px)
     .header
@@ -52,14 +57,12 @@ h1
         padding-right: 10%
         width: auto
         text-align: center
-    .buttons
-        margin-top: 10%
-        .suscripcion
-            width: 50%
-            @include buttons-fix($padding:5% ) //include tiene que ir arriba
-        .pais
-            @include buttons-fix($padding:10% ) //include tiene que ir arriba
-            width: 50%
+    .buttons__containersuscripcion
+        @include buttons-fix($padding:5% ) //include tiene que ir arriba
+        width: 50%
+    .buttons__containerpais
+        @include buttons-fix($padding:10% ) //include tiene que ir arriba
+        width: 50%
     .button-dash
         @include button($size:6rem )
 @media only screen and (min-width:768px) and (max-width:1023px)
@@ -68,15 +71,12 @@ h1
         padding-left: 10%
         padding-right: 10%
         width: auto
-        text-align: center
-    .buttons
-        margin-top: 10%
-        .suscripcion
-            width: 50%
-            display: block
-        .pais
-            width: 50%
-            display: block
+    .buttons__containersuscripcion
+        width: 50%
+        display: block
+    .buttons__containerpais
+        width: 50%
+        display: block
 @media only screen and (min-width:1024px) and (max-width:1407px)
     .header
         font-size: 4rem

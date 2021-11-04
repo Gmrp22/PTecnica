@@ -17,16 +17,15 @@ $tbody-fuente: $recuperados
     color: $color
     width: auto
 //Estilos de tabla
-table
+.table-component
     @include Table($size: 10%, $w:10% )
+.table-component__thead
+    background-color: $purple-color
+.table-component__thead__th
+    @include Fuentes($white, $sizef: 1.8em)
 
-    thead
-        background-color: $purple-color
-        th
-            @include Fuentes($white, $sizef: 1.8em)
-
-    tbody
-        @include Fuentes($tbody-fuente,$sizef: 1.8em)
+.table-component__tbody
+    @include Fuentes($tbody-fuente,$sizef: 1.8em)
 
 
 
@@ -34,24 +33,24 @@ table
 
 //Responsive
 @media only screen and (max-width:767px)
-    table
+    .table-component
         @include Table($size: 4%, $w:94% )
-        thead
-            background-color: $purple-color
-            th
-                @include Fuentes($white, $sizef: 3vw)
+    .table-component__thead
+        background-color: $purple-color
+    .table-component__thead__th
+        @include Fuentes($white, $sizef: 3vw)
 
-        tbody
-            @include Fuentes($tbody-fuente,$sizef: 3vw)
+    table-component__tbody
+        @include Fuentes($tbody-fuente,$sizef: 3vw)
 @media only screen and (min-width:768px) and (max-width:1023px)
-    table
+    .table-component
         @include Table($size: 5%, $w:5% )
 @media only screen and (min-width:1024px) and (max-width:1215px)
-    table
+    .table-component
         @include Table($size: 5%, $w:5% )
 @media only screen and (min-width:1216px) and (max-width:1407px)
-    table
+    .table-component
         @include Table($size: 10%, $w:10% )
 @media only screen and (min-width:1408px)
-    table
+    .table-component
         @include Table($size: 10%, $w:10% )

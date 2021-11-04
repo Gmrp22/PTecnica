@@ -9,14 +9,14 @@
     border-radius: 20px
     &:hover:first-child
         border-color: $white
-
-.tarea
+//Cambio segun BEM
+.tbordes
     margin: 2% 0
-    > p //segun guia, nested
-        @include roundedBorder() //Include tiene que ir arriba
-        display: inline-block
-        margin: 0 10%
-        border: 20px solid $purple-color
+.tbordes__p 
+    @include roundedBorder() //Include tiene que ir arriba
+    display: inline-block
+    margin: 0 10%
+    border: 20px solid $purple-color
 
 // Condicones, si se tiene un true, se cambia el color de fondo
 @mixin condicion($orden)
@@ -24,30 +24,32 @@
         background-color: $purple-color
 
 //List, solo se le cambiara el fondo al primer hijo
-.if 
+//Cambio segun BEM
+.tif 
     //primero pseudoclases y pseudoelemnto  y luego selectores nested
-    p:first-child
+.tif__p
+    border: $border $purple-color
+    width: 50%
+    &:first-child
         @include condicion($orden: true)
-    > p
-        border: $border $purple-color
-        width: 50%
 
+//Cambio segun BEM
 //EACH, se itera una lista y se generan clases de color para cada elemento en esta
 $list: $blue, $red, $green
 @each $color in $list
-    .p-#{$color}
+    .teach--#{$color}
         background-color: $color
         width: 50%
-
+//Cambio segun BEM
 //for, se itera para generar clases con distintos tamaños
 @for $var from 1 through 4
-    .s-#{$var}
+    .tfor--#{$var}
         font-size: $var *1em
-
+//Cambio segun BEM
 //while, se itera hasta que x=4, para generar clases de tamaño
 $x: 1
 @while $x < 4
-    .p-#{$x}
+    .twhile--#{$x}
         font-size: 10px*$x
     $x: $x + 1
 

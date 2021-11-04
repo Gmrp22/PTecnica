@@ -1,16 +1,16 @@
 <div>
-  <table class="table">
-    <thead class="thead-dark">
+  <table class="table table-component">
+    <thead class="thead-dark table-component__thead">
       <tr>
-        <th>Pais</th>
-        <th>Confirmados</th>
-        <th scope="col">Recuperados</th>
-        <th scope="col">Fallecidos</th>
-        <th scope="col">Fecha</th>
+        <th class="table-component__thead__th">Pais</th>
+        <th class="table-component__thead__th">Confirmados</th>
+        <th scope="col" class="table-component__thead__th">Recuperados</th>
+        <th scope="col" class="table-component__thead__th">Fallecidos</th>
+        <th scope="col" class="table-component__thead__th">Fecha</th>
       </tr>
     </thead>
 
-    <tbody></tbody>
+    <tbody class="table-component__tbody"></tbody>
   </table>
   <app-paginacion
     (newPageEvent)="tableData($event)"

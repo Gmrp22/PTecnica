@@ -14,6 +14,20 @@ $fuente: 'Exo', sans-serif
 .covid-data-dash
     @include DashMargin($size: 8rem)
 
+//Mixin para header
+@mixin header($size)
+    font-weight: bold
+    font-size: 1em + $size
+    font-family: $fuente
+    width: auto
+    text-align: center
+    padding-bottom: 2%
+.header
+    @include header(2em)
+    margin: 2%
+    color: #2E3045
+
+
 @mixin labels($color)
     font-weight: bold
     font-size: calc(1em + 1vw)
@@ -22,35 +36,14 @@ $fuente: 'Exo', sans-serif
     width: auto
     margin-bottom: 2%
 
-//Estilo de labes 
-.confirmados
-    label
-        @include labels($casos)
-.recuperados
-    label
-        @include labels($recuperados)
-.fallecidos
-    label
-        @include labels($fallecidos)
+//Estilo de labes, cambio BEM para elementos
+.covid-data-dash__confirmados
+    @include labels($casos)
+.covid-data-dash__recuperados
+    @include labels($recuperados)
+.covid-data-dash__fallecidos
+    @include labels($fallecidos)
 
-//Mixin para header
-
-@mixin header($size)
-    font-weight: bold
-    font-size: 1em + $size
-    font-family: $fuente
-    width: auto
-    text-align: center
-    padding-bottom: 2%
-h3
-    font-family: $fuente
-    font-style: normal
-    font-weight: bold
-    margin: 2%
-    color: #2E3045
-
-.header
-    @include header(2em)
 
 //Responsive
 @media only screen and (max-width:768px)
@@ -62,10 +55,7 @@ h3
         width: auto
         text-align: center
     .covid-data-dash
-        @include DashMargin($size: 2rem)
-      
-        
-
+        @include DashMargin($size: 2rem)             
 @media only screen and (min-width:769px) and (max-width:1023px)
 
     .header
