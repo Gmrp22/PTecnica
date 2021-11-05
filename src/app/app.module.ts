@@ -12,10 +12,11 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { TableComponent } from './Components/table/table.component';
 import { PaginacionComponent } from './Components/paginacion/paginacion.component';
 import { FormComponent } from './Components/form/form.component';
+import { AnMaterialComponent } from './Components/an-material/an-material.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, TableComponent, PaginacionComponent, FormComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  declarations: [AppComponent, DashboardComponent, TableComponent, PaginacionComponent, FormComponent, AnMaterialComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
