@@ -1,4 +1,12 @@
-import { Component, ContentChild, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ContentChild,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { CovidService } from 'src/app/services/covid/covid.service';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 import { DashboardComponent } from '../dashboard/dashboard.component';
@@ -19,10 +27,14 @@ export class PaginacionComponent implements OnInit {
   //Se ejecuta despues de que se renderizo los datos input. Va despues de onChanges y solo una vez
   ngOnInit(): void {
     //Inicializa el fondo a color amarillo y borde morado
-    alert("CLICK")
     this.yellowcolor = true;
     this.purplecolor = false;
     this.state = false;
+    console.log('on_init 2');
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('on_changes 2');
   }
 
   //Detecta cambios que angular no, va despues de onchanges y oninit
@@ -35,6 +47,7 @@ export class PaginacionComponent implements OnInit {
       this.yellowcolor = true;
       this.purplecolor = false;
     }
+    console.log('do_check 2');
   }
 
   clickChange() {
@@ -46,21 +59,13 @@ export class PaginacionComponent implements OnInit {
     }
   }
 
-
-
-
-//aftercontent init, despues de que se ha proyectado contenido de otro html a el componente. Se llama despues de ngdocheck
-ngAfterContentInit(): void {
-  alert("Dash proyectado inicializado")
-  
-}
-//aftercontentchecked init, despues de que se hay cambios. Se llama despues de ngdocheck
-ngAfterContentChecked(): void {
-  console.log("after_content_checked")
-  
-}
-
-
-
-
+  //aftercontent init, despues de que se ha proyectado contenido de otro html a el componente. Se llama despues de ngdocheck
+  ngAfterContentInit(): void {
+    alert('Dash proyectado inicializado');
+    console.log('after_content_init 2');
+  }
+  //aftercontentchecked init, despues de que se hay cambios. Se llama despues de ngdocheck
+  ngAfterContentChecked(): void {
+    console.log('after_content_checked 2');
+  }
 }

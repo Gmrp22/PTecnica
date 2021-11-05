@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Notify, Report, Confirm, Loading, Block } from 'notiflix';
+import { Notify, Report, Confirm, Loading, Block } from 'notiflix'; 
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',

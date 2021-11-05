@@ -44,6 +44,7 @@ export class TableComponent {
         ' El anterior es: ' +
         changes.iso.previousValue;
     }
+    console.log("on_changes " + "1")
   }
 
   tableData(response: any) {
@@ -58,14 +59,15 @@ export class TableComponent {
   ngOnDestroy(): void {
     //Muestra una alerta de adios
     alert('Adios desde boton');
+    console.log("on_destroy 1")
   }
 
   //se ejecuta despues que se inicializa el componente hijo
   ngAfterViewInit(): void {
-    alert("paginacion hijo inicializado")
+    console.log("after_view_init 1")
   }
 
   ngAfterViewChecked(): void {
-    console.log("after_view_Checked")
+    console.log("after_view_Checked 1")
   }
 }
