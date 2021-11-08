@@ -1,0 +1,89 @@
+<div class="material-component">
+  <h3>Auto complete</h3>
+  <mat-autocomplete #test="matAutocomplete"  >
+    <mat-option> Opción1 </mat-option>
+    <mat-option> Opción2 </mat-option>
+  </mat-autocomplete>
+
+  <input
+    type="text"
+    placeholder="Seleccionar"
+    aria-label="Number"
+    matInput
+    [matAutocomplete]="test"
+  />
+</div>
+<!-- Badges -->
+<div class="material-component">
+  <h3>Badges, siempre en block elements</h3>
+  <button
+    mat-raised-button
+    color="primary"
+    matBadge="1"
+    matBadgePosition="before"
+    matBadgeColor="accent"
+  >
+    Te1
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    matBadge="2"
+    matBadgePosition="after"
+    matBadgeColor="accent"
+  >
+    Te2
+  </button>
+  <span matBadge="3" matBadgeOverlap="true" >T3</span>
+  <span matBadge="4" matBadgeOverlap="false">T4</span>
+</div>
+<!-- Botton sheet -->
+<div class="material-component">
+  <h3>Mat Bottom Sheet, siempre en block elements</h3>
+  <button
+    mat-raised-button
+    color="primary"
+    matBadge="8"
+    matBadgePosition="before"
+    matBadgeColor="accent"
+  >
+    Action
+  </button>
+</div>
+<!-- Button -->
+<div class="material-component">
+  <h3>Botones</h3>
+  <button mat-button color="accent">Mat button, no elevation</button>
+  <button mat-raised-button color="accent">
+    Mat raised, contained elevation
+  </button>
+  <button mat-flat-button color="accent">
+    Mat flat, contained no elevation
+  </button>
+  <button mat-stroked-button color="accent">
+    Out line button, no elevation
+  </button>
+  <!-- Circular, es para contener un icono y tiene fondo transparente -->
+  <button mat-icon-button color="accent">s</button>
+  <!-- Circular button, elevation, tema default -->
+  <button mat-fab>s</button>
+  <!-- Como mat-fab pero pequeño -->
+  <button mat-mini-fab>d</button>
+</div>
+
+<!-- Toggle button -->
+<div class="material-component">
+  <h3>Toggle button</h3>
+  Uno
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" vertical>
+    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+  </mat-button-toggle-group>
+  Multipl
+  <mat-button-toggle-group multiple name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>

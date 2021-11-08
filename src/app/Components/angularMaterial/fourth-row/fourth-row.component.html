@@ -1,0 +1,135 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<!-- Iconos -->
+<div class="material-component">
+  <h3>Mat icon</h3>
+  <mat-icon color="accent" aria-hidden="true" aria-label="Example  md-48 icon"
+    >face</mat-icon
+  >
+</div>
+
+<!-- Input -->
+<div class="material-component">
+  <h3>Input</h3>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="correo" [formControl]="email" />
+
+    <mat-error *ngIf="email.touched"> Escribir email </mat-error>
+  </mat-form-field>
+</div>
+
+<!-- List -->
+<div class="material-component">
+  <h3>Input</h3>
+  <div>
+    Simple list
+    <mat-list>
+      <mat-list-item> 1 </mat-list-item>
+      <mat-list-item> 2 </mat-list-item>
+      <mat-list-item> 3 </mat-list-item>
+    </mat-list>
+  </div>
+  <hr />
+  <div>
+    Navigation list
+    <mat-nav-list>
+      <a mat-list-item href="..."> link1 </a>
+      <a mat-list-item href="..."> link2 </a>
+    </mat-nav-list>
+  </div>
+  <hr />
+  <div>
+    Actions list
+    <mat-action-list>
+      <button mat-list-item (click)="saludo()">Save</button>
+      <button mat-list-item (click)="saludo()">Undo</button>
+    </mat-action-list>
+  </div>
+  <hr />
+  <div>
+    Selection list
+    <mat-selection-list>
+      <mat-list-option>Op1</mat-list-option>
+    </mat-selection-list>
+  </div>
+  <hr />
+  <div>
+    Multi line lists
+    <mat-list> </mat-list>
+  </div>
+  <hr />
+
+  <div>
+    List icon
+    <mat-list>
+      <mat-list-item>
+        <mat-icon matListIcon>face</mat-icon>
+        <h3 matLine>Header</h3>
+        <p matLine>
+          <span> contenido </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <hr />
+  <div>
+    List avatar
+    <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="..." alt="none" />
+        <h3 matLine>Header1</h3>
+      </mat-list-item>
+      <mat-list-item>
+        <img matListAvatar src="..." alt="none" />
+        <h3 matLine>Header2</h3>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <hr />
+
+  <div>
+    Dense list
+    <mat-list dense>
+      <mat-list-item> o1 </mat-list-item>
+      <mat-list-item> o2 </mat-list-item>
+      <mat-list-item> o3 </mat-list-item>
+    </mat-list>
+  </div>
+  <hr />
+
+  <div>
+    <mat-list>
+      <h3 matSubheader>Folders</h3>
+      <mat-list-item>
+        <mat-icon matListIcon>folder</mat-icon>
+        <h4 matLine>older.name</h4>
+        <p matLine class="demo-2">folder.updated</p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <h3 matSubheader>Notes</h3>
+      <mat-list-item>
+        <mat-icon matListIcon>note</mat-icon>
+        <h4 matLine>note.name</h4>
+        <p matLine class="demo-2">note.updated</p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+<!-- Menu -->
+<div class="material-component">Menu</div>
+<!-- Paginator -->
+<div class="material-component">
+  Paginator
+
+  <mat-paginator
+    [length]="25"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 15, 20, 25]"
+    aria-label="Seleccionar"
+  >
+  </mat-paginator>
+</div>

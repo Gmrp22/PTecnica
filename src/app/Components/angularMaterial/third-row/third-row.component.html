@@ -1,0 +1,131 @@
+<!-- Card -->
+<div class="material-component">
+  <h3>Dialog</h3>
+</div>
+
+<!-- Card -->
+<div class="material-component">
+  <h3>Divider</h3>
+  <div>
+    Simple
+    <mat-divider></mat-divider>
+  </div>
+  <div>
+    Inset
+    <mat-divider [inset]="true"></mat-divider>
+  </div>
+  <div>
+    Vertical
+    <mat-divider [vertical]="true"></mat-divider>
+  </div>
+</div>
+
+<!-- Expansion panel-->
+<div class="material-component">
+  <h3>Expansion panel</h3>
+
+  <div>
+    Simple
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Titulo de panel </mat-panel-title>
+        <mat-panel-description>
+          descripcion de contenido
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Contenido.</p>
+      <mat-action-row>
+        <button mat-button color="primary">Accion</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+  <div>
+    Disabled
+    <mat-expansion-panel disabled>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Titulo de panel </mat-panel-title>
+      </mat-expansion-panel-header>
+      sdfsd
+    </mat-expansion-panel>
+  </div>
+  <div>
+    Accordion
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Panel1 </mat-panel-title>
+          <mat-panel-description> Panel1... </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Contenido.</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Panel2 </mat-panel-title>
+          <mat-panel-description> panel2-- </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Contenido</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div>
+    Lazy rendering
+    <mat-expansion-panel>
+      <mat-expansion-panel-header> Titulo de pnale </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent> Lazy content </ng-template>
+    </mat-expansion-panel>
+  </div>
+</div>
+
+<!-- Form field, legacy si permite float de placeholder, los otros no-->
+<div class="material-component">
+  <div>
+    Apariencia
+    <div>
+      fill
+      <mat-form-field appearance="fill">
+        <mat-label floatLabel="always">label</mat-label>
+        <input matInput placeholder="Placeholder" />
+      </mat-form-field>
+    </div>
+    <div>
+      Outline
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Placeholder" />
+      </mat-form-field>
+    </div>
+    <div>
+      Legacy
+      <mat-form-field appearance="legacy">
+        <input matInput placeholder="Placeholder" />
+        <mat-hint align="start">ss</mat-hint>
+        <mat-hint align="end">ss2</mat-hint>
+      </mat-form-field>
+    </div>
+    <div>
+      standard
+      <mat-form-field appearance="standard">
+        <mat-label floatLabel="never">label</mat-label>
+        <input matInput placeholder="Placeholder" />
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+
+<!-- Grid, colspan=ancho, rowspan=alto-->
+<div class="material-component"> 
+Grid
+<div>
+  <mat-grid-list cols="8" rowHeight="100px">
+    <mat-grid-tile
+        *ngFor="let n of columnas"
+        [colspan]=n
+        [rowspan]=2
+       style="background-color: aquamarine;">
+     
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+</div>

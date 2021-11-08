@@ -1,34 +1,7 @@
-<div class="main">
-  <div><h1 class="header">Estadisticas COVID</h1></div>
-  <app-dashboard></app-dashboard>
-  <div class="buttons">
-    <div class="buttons__containerpais">
-      <select
-        class="button-dash button is-fullwidth"
-        [(ngModel)]="iso"
-        (change)="showTable()"
-      >
-        <option disabled selected hidden value="">Paises</option>
-        <option *ngFor="let p of paises" value="{{ p.value }}">
-          {{ p.nombre }}
-        </option>
-        <option value="N/A">Esconder</option>
-      </select>
-
-      <ng-template #notShow>
-        <button class="button-dash button is-fullwidth" (click)="hideTable()">
-          Esconder tabla
-        </button>
-      </ng-template>
-    </div>
-    <div class="buttons__containersuscripcion">
-      <button class="button-dash button is-fullwidth" (click)="showForm()">
-        Suscripción
-      </button>
-    </div>
-  </div>
-  <!-- Muestra la tabla y pasa la variable iso -->
-  <app-table *ngIf="tableShow" [iso]="iso"> </app-table>
-  <!-- Hice el binfing para poder recibir el output del form -->
-  <app-form *ngIf="formShow" (alert)="alertas($event)"></app-form>
-</div>
+<app-an-material> </app-an-material>
+<app-second-row></app-second-row>
+<app-third-row></app-third-row>
+<app-fourth-row></app-fourth-row>
+<app-fifth-row></app-fifth-row>
+<app-sixth-row></app-sixth-row>
+<app-seventh-row></app-seventh-row>
