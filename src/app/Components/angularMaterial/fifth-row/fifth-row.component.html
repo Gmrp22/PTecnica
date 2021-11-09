@@ -42,10 +42,51 @@
 </div>
 
 <!-- Riple -->
-<div class="material-component"></div>
+<div class="material-component">Ripple
+  <div matRipple [matRippleColor]="red">
+    <p style="border: 10px sold rgb(129, 184, 221);">JDSDJSDJ</p>
+  </div>
 
+</div>
 
 <!-- Select -->
 <div class="material-component">
-    
+  Select
+  <div>
+    Basic mat
+    <mat-form-field appearance="fill">
+      <mat-label>Test</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let f of arr" [value]="f">
+          {{ f }}
+        </mat-option>
+      </mat-select>
+      <mat-hint>esc</mat-hint>
+    </mat-form-field>
+  </div>
+  <div>
+    Group
+    <mat-form-field appearance="fill">
+      <mat-label>test</mat-label>
+      <mat-select>
+        <mat-option>-- test--</mat-option>
+        <mat-optgroup disabled="true">
+          <mat-option *ngFor="let f of arr" [value]="f">
+            {{ f }}
+          </mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    Multiple
+    <mat-form-field appearance="fill">
+      <mat-label>multiple</mat-label>
+      <mat-select multiple>
+        <mat-option *ngFor="let f of arr" [value]="f">
+          {{ f }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 </div>

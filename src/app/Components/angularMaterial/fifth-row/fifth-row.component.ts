@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fifth-row.component.sass']
 })
 export class FifthRowComponent implements OnInit {
-
+  arr=[1,2,3,4,5]
+  red="red"
   constructor() { }
 
   ngOnInit(): void {

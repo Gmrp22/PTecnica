@@ -32,10 +32,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatSliderModule} from '@angular/material/slider';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatStepperModule} from '@angular/material/stepper';
 const materialModules = [
   CdkTreeModule,
   MatAutocompleteModule,
@@ -71,17 +74,15 @@ const materialModules = [
   MatTooltipModule,
   MatProgressBarModule,
   MatSlideToggleModule,
-  MatSliderModule
+  MatSliderModule,
+  MatNativeDateModule,
+  MatDialogModule,
+  MatBottomSheetModule,
+  MatStepperModule
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ...materialModules
-  ],
-  exports: [
-    ...materialModules
-  ],
+  imports: [CommonModule, ...materialModules],
+  exports: [...materialModules],
 })
-
-export class AngularMaterialModule { }
+export class AngularMaterialModule {}

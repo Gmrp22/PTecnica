@@ -14,9 +14,9 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { TableComponent } from './Components/table/table.component';
 import { PaginacionComponent } from './Components/paginacion/paginacion.component';
 import { FormComponent } from './Components/form/form.component';
-import { AnMaterialComponent } from './Components/angularMaterial/an-material/an-material.component';
+import { AnMaterialComponent, BottomSheetOverviewExampleSheet } from './Components/angularMaterial/an-material/an-material.component';
 import { SecondRowComponent } from './Components/angularMaterial/second-row/second-row.component';
-import {ThirdRowComponent} from  './Components/angularMaterial/third-row/third-row.component';
+import {DialogContentExampleDialog, ThirdRowComponent} from  './Components/angularMaterial/third-row/third-row.component';
 import { FourthRowComponent } from './Components/angularMaterial/fourth-row/fourth-row.component';
 import { FifthRowComponent } from './Components/angularMaterial/fifth-row/fifth-row.component';
 import { SixthRowComponent } from './Components/angularMaterial/sixth-row/sixth-row.component';
@@ -36,7 +36,9 @@ import { SeventhRowComponent } from './Components/angularMaterial/seventh-row/se
     FourthRowComponent,
     FifthRowComponent,
     SixthRowComponent,
-    SeventhRowComponent
+    SeventhRowComponent,
+    BottomSheetOverviewExampleSheet,
+    DialogContentExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,10 @@ import { SeventhRowComponent } from './Components/angularMaterial/seventh-row/se
     AngularMaterialModule
   ],
   providers: [],
+  entryComponents: [
+    BottomSheetOverviewExampleSheet,
+    DialogContentExampleDialog
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })

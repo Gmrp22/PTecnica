@@ -25,8 +25,7 @@
   <h3>Checkbox, igual que el input</h3>
   <mat-checkbox>Check</mat-checkbox>
   <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
-  <mat-checkbox   [labelPosition]="labelPosition">Before</mat-checkbox>
-
+  <mat-checkbox [labelPosition]="labelPosition">Before</mat-checkbox>
 </div>
 <!-- Chips -->
 <div class="material-component">
@@ -42,6 +41,65 @@
 <!-- Datepicker -->
 <div class="material-component">
   <h3>DatePicker, seleccion de fecha</h3>
+  <div>
+    Simple
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker>
+        <mat-datepicker-actions>
+          <button mat-button matDatepickerCancel>Cancel</button>
+          <button mat-raised-button color="primary" matDatepickerApply>
+            Apply
+          </button>
+        </mat-datepicker-actions>
+      </mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    Inicio-fin multiple
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha</mat-label>
 
-  
+      <mat-date-range-input [rangePicker]="picker2">
+        <input matStartDate formControlName="start" placeholder="Start date" />
+        <input matEndDate formControlName="end" placeholder="End date" />
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker2></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+  <div>
+    Year
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker3" />
+      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+      <mat-datepicker startView="year" #picker3></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    Multi year
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker4" disabled />
+      <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+      <mat-datepicker startView="multi-year" #picker4></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    Touch
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker5" />
+      <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker5></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-card style="width: 30vw">
+      <mat-calendar></mat-calendar>
+    </mat-card>
+  </div>
 </div>

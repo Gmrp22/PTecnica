@@ -14,17 +14,26 @@
 <!-- Input -->
 <div class="material-component">
   <h3>Input</h3>
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput placeholder="correo" [formControl]="email" />
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="correo" [formControl]="email" />
 
-    <mat-error *ngIf="email.touched"> Escribir email </mat-error>
-  </mat-form-field>
+      <mat-error *ngIf="email.touched"> Escribir email </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    Text area
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Datos</mat-label>
+      <textarea matInput placeholder="placeholder"></textarea>
+    </mat-form-field>
+  </div>
 </div>
 
 <!-- List -->
 <div class="material-component">
-  <h3>Input</h3>
+  <h3>List</h3>
   <div>
     Simple list
     <mat-list>
@@ -102,6 +111,7 @@
   <hr />
 
   <div>
+    Multiple selection
     <mat-list>
       <h3 matSubheader>Folders</h3>
       <mat-list-item>
@@ -120,7 +130,40 @@
   </div>
 </div>
 <!-- Menu -->
-<div class="material-component">Menu</div>
+<div class="material-component">
+  Menu
+  <div>
+    Menu arriba Simple
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" yPosition="above">
+      <button mat-menu-item>
+        <span>t1</span>
+      </button>
+      <button mat-menu-item disabled>
+        <span>t2</span>
+      </button>
+      <button mat-menu-item>
+        <span>t3</span>
+      </button>
+    </mat-menu>
+  </div>
+  <div>
+    Menu nested
+    <button mat-icon-button [matMenuTriggerFor]="menu2">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu2="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="vertebrates">t1</button>
+    </mat-menu>
+
+    <mat-menu #vertebrates="matMenu">
+      <button mat-menu-item>t1.1</button>
+      <button mat-menu-item>t1.2</button>
+    </mat-menu>
+  </div>
+</div>
 <!-- Paginator -->
 <div class="material-component">
   Paginator

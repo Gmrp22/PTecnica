@@ -1,7 +1,96 @@
 <!-- Stepper -->
-<div class="material-component"></div>
+<div class="material-component">
+ stepper 
+ <div>Simple
+  <mat-stepper #stepper>
+    <mat-step >
+      <form >
+        <ng-template matStepLabel>te1</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>te1</mat-label>
+          <input matInput placeholder="tt" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form >
+        <ng-template matStepLabel>te2</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>te2</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="rr"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-stepper>   
+</div>
+<div>Vertical
+  <mat-stepper #stepper orientation="vertical">
+    <mat-step >
+      <form >
+        <ng-template matStepLabel>te1</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>te1</mat-label>
+          <input matInput placeholder="tt" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form >
+        <ng-template matStepLabel>te2</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>te2</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="rr"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-stepper>   
+</div>
+
+</div>
 <!-- Table -->
-<div class="material-component"></div>
+<div class="material-component">
+  Table
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef>Weight</th>
+        <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
 <!-- Tabs -->
 <div class="material-component">
   Tabs
@@ -102,4 +191,4 @@
 </div>
 
 <!-- Tree -->
-<div class="material-component"></div>
+
