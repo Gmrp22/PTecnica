@@ -30,15 +30,6 @@ import { SeventhRowComponent } from './Components/angularMaterial/seventh-row/se
     TableComponent,
     PaginacionComponent,
     FormComponent,
-    AnMaterialComponent,
-    SecondRowComponent,
-    ThirdRowComponent,
-    FourthRowComponent,
-    FifthRowComponent,
-    SixthRowComponent,
-    SeventhRowComponent,
-    BottomSheetOverviewExampleSheet,
-    DialogContentExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -47,13 +38,9 @@ import { SeventhRowComponent } from './Components/angularMaterial/seventh-row/se
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+
   ],
   providers: [],
-  entryComponents: [
-    BottomSheetOverviewExampleSheet,
-    DialogContentExampleDialog
-  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })
